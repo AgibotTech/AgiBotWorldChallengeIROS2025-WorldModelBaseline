@@ -7,7 +7,7 @@ This repo includes the training codes of Action-Conditioned World Model on [AgiB
 
 ### Setup
 ```
-git clone --recursive https://github.com/user/repo.git
+git clone --recursive https://github.com/AgibotTech/AgiBotWorldChallengeIROS2025-WorldModelBaseline.git
 conda create -n enerverse python=3.10.4
 conda activate enerverse
 pip install -r requirements.txt`
@@ -38,7 +38,7 @@ bash scripts/train.sh
 ## Related Works
 This project draws inspiration from the following projects:
 - [EnerVerse](https://sites.google.com/view/enerverse)
-- [EnerVerseAC](https://github.com/AgibotTech/EnerVerse-AC)
+- [EnerVerse-AC](https://github.com/AgibotTech/EnerVerse-AC)
 - [DynamiCrafter](https://github.com/Doubiiu/DynamiCrafter)
 - [LVDM](https://github.com/YingqingHe/LVDM)
 
