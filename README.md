@@ -32,7 +32,7 @@ bash scripts/train.sh
 
 ## TODO
 - [x] Minimal version of training code for [AgibotWorld dataset](https://github.com/OpenDriveLab/AgiBot-World) and pretrained weights.
-- [ ] Minimal version of Training code for the challenge's dataset. (available once the challenge dataset is ready)  
+- [ ] Minimal version of training code for the challenge's dataset. (available once the challenge dataset is ready)  
 - [ ] Evaluation script.
 - [ ] Submission instructions.
 
