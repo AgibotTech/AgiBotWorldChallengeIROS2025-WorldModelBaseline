@@ -12,7 +12,7 @@ This repo provides a minial version of training codes.
 git clone --recursive https://github.com/AgibotTech/AgiBotWorldChallengeIROS2025-WorldModelBaseline.git
 conda create -n enerverse python=3.10.4
 conda activate enerverse
-pip install -r requirements.txt`
+pip install -r requirements.txt
 ```
 
 ### Training
@@ -54,6 +54,12 @@ Please consider citing our paper if our codes are useful:
   title={Enerverse: Envisioning Embodied Future Space for Robotics Manipulation},
   author={Huang, Siyuan and Chen, Liliang and Zhou, Pengfei and Chen, Shengcong and Jiang, Zhengkai and Hu, Yue and Liao, Yue and Gao, Peng and Li, Hongsheng and Yao, Maoqing and others},
   journal={arXiv preprint arXiv:2501.01895},
+  year={2025}
+}
+@article{jiang2025enerverseac,
+  title={EnerVerse-AC: Envisioning Embodied Environments with Action Condition},
+  author={Jiang, Yuxin and Chen, Shengcong and Huang, Siyuan and Chen, Liliang and Zhou, Pengfei and Liao, Yue and He, Xindong and Liu, Chiming and Li, Hongsheng and Yao, Maoqing and Ren, Guanghui},
+  journal={arXiv preprint arXiv:2505.09723},
   year={2025}
 }
 ```
