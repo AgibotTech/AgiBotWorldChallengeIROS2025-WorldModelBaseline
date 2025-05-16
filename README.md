@@ -1,6 +1,6 @@
 # World Model Baseline
 
-We adopt [EVAC](https://huggingface.co/agibot-world/EnerVerse-AC) as the baseline model for the AgiBot World Challenge @ IROS 2025 - World Model track.
+We adopt [EVAC](https://huggingface.co/agibot-world/EnerVerse-AC) as the baseline model for the [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge) - World Model track.
 
 This repo provides a minial version of training codes. 
 
