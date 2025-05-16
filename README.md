@@ -1,6 +1,8 @@
 # World Model Baseline
 
-This repo includes the training codes of Action-Conditioned World Model on [AgiBotWorld](https://github.com/OpenDriveLab/AgiBot-World).
+We adopt [EVAC](https://huggingface.co/agibot-world/EnerVerse-AC) as the baseline model for the AgiBot World Challenge @ IROS 2025 - World Model track.
+
+This repo provides a minial version of training codes. of Action-Conditioned World Model on [AgiBotWorld].
 
 
 ## Getting started
@@ -29,9 +31,10 @@ bash scripts/train.sh
 
 
 ## TODO
-- [x] Release the codes of training a single-view actioned-conditioned world model and a releated checkpoint
-- [ ] Support more model architectures
-- [ ] Support more features
+- [x] Minimal version of training code for [AgibotWorld dataset](https://github.com/OpenDriveLab/AgiBot-World) and pretrained weights.
+- [ ] Minimal version of Training code for the challenge's dataset. (available once the challenge dataset is ready)  
+- [ ] Evaluation script.
+- [ ] Submission instructions.
 
 
 
