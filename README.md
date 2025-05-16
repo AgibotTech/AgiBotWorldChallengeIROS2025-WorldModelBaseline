@@ -2,7 +2,7 @@
 
 We adopt [EVAC](https://huggingface.co/agibot-world/EnerVerse-AC) as the baseline model for the AgiBot World Challenge @ IROS 2025 - World Model track.
 
-This repo provides a minial version of training codes. of Action-Conditioned World Model on [AgiBotWorld].
+This repo provides a minial version of training codes. 
 
 
 ## Getting started
