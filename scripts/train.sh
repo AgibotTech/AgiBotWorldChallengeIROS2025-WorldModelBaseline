@@ -1,9 +1,8 @@
 #!/usr/local/bash
 
-
 name="agibotworld"
 tag="_expv0"
-config_file=configs/${name}/train_config.yaml
+config_file=${1:-configs/${name}/train_config.yaml}
 
 save_root="./log"
 
@@ -13,6 +12,10 @@ NGPU=`nvidia-smi --list-gpus | wc -l`
 export OMP_NUM_THREADS=4
 
 echo "Training on 1 Node, $NGPU GPUs"
+echo $config_file
+
+exit
+
 
 torchrun --nnodes=1 \
     --nproc_per_node=$NGPU \

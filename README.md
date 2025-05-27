@@ -4,6 +4,13 @@ We adopt [EVAC](https://huggingface.co/agibot-world/EnerVerse-AC) as the baselin
 
 This repo provides a minial version of training codes. 
 
+## News
+
+- [2025.05.26] 🚀🚀 The minimal version of training code for [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge)s have been released.
+
+- [2025.05.26] 🔥🔥 The training and validation datasets of [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge) - World Model track have been released.
+
+- [2025.05.16] The minimal version of training code for AgibotWorld dataset and pretrained weights have been released.
 
 ## Getting started
 
@@ -17,6 +24,22 @@ pip install -r requirements.txt
 
 ### Training
 
+#### Training on [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge)
+
+1. Download the checkpoint from [EVAC](https://huggingface.co/agibot-world/EnerVerse-AC), and modify ``model.pretrained_checkpoint`` in ``configs/agibotworld/train_config_iros_challenge_wm.yaml`` to the checkpoint file ``*.pt``
+
+2. Download the weight of [CLIP](https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K), and modify ``model.params.img_cond_stage_config.params.abspath``
+in ``configs/agibotworld/train_config_iros_challenge_wm.yaml`` to the absolute path to ``open_clip_pytorch_model.bin`` inside the download directory
+
+3. Modify the path ``data.params.train.params.data_roots`` in ``configs/agibotworld/train_config_iros_challenge_wm.yaml`` to the root of AgiBotWorld dataset
+
+4. Run the script
+```
+bash scripts/train.sh configs/agibotworld/train_config_iros_challenge_wm.yaml
+```
+
+#### Training on [AgiBotWolrd](https://huggingface.co/datasets/agibot-world/AgiBotWorld-Beta)
+
 1. Download the checkpoint from [EVAC](https://huggingface.co/agibot-world/EnerVerse-AC), and modify ``model.pretrained_checkpoint`` in ``configs/agibotworld/train_configs.yaml`` to the checkpoint file ``*.pt``
 
 2. Download the weight of [CLIP](https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K), and modify ``model.params.img_cond_stage_config.params.abspath``
@@ -26,13 +49,13 @@ in ``configs/agibotworld/train_configs.yaml`` to the absolute path to ``open_cli
 
 4. Run the script
 ```
-bash scripts/train.sh
+bash scripts/train.sh configs/agibotworld/train_config.yaml
 ```
 
 
 ## TODO
 - [x] Minimal version of training code for [AgibotWorld dataset](https://github.com/OpenDriveLab/AgiBot-World) and pretrained weights.
-- [ ] Minimal version of training code for the challenge's dataset. (available once the challenge dataset is ready)  
+- [x] Minimal version of training code for the challenge's dataset. (available once the challenge dataset is ready)  
 - [ ] Evaluation script.
 - [ ] Submission instructions.
 

@@ -149,15 +149,16 @@ model:
         video_length: 16
 
 data:
-  target: dataset.utils_data.DataModuleFromConfig
+  target: dataset.utils_data.AgiBotWorldIROSChallenge
   params:
     batch_size: 8
     num_workers: 8
     train:
       target: dataset.agibotworld_dataset.AgiBotWorld
       params:
-        data_roots: ["PATH_TO_AGIBOTWORLD", ]
+        data_roots: ["PATH_TO_IROS25_WM_DATASET", ]
         domains: ["agibotworld", ]
+        split: "train"
         sample_size: [320, 512]
         sample_n_frames: 64
         preprocess :  'resize'
@@ -165,7 +166,6 @@ data:
         chunk: ${chunk}
         n_previous: ${n_previous}
         previous_pick_mode: 'random'
-        action_dim: 7
         random_crop: True
         min_sep: 1
         max_sep: 3
