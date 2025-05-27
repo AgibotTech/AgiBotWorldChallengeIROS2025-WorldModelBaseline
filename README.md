@@ -1,6 +1,6 @@
 # World Model Baseline
 
-We adopt [EVAC](https://huggingface.co/agibot-world/EnerVerse-AC) as the baseline model for the [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge) - World Model track.
+We adopt [EVAC](https://github.com/AgibotTech/EnerVerse-AC) as the baseline model for the [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge) - World Model track.
 
 This repo provides a minial version of training codes. 
 
@@ -8,7 +8,7 @@ This repo provides a minial version of training codes.
 
 - [2025.05.26] 🚀🚀 The minimal version of training code for [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge) - World Model track have been released.
 
-- [2025.05.26] 🔥🔥 The training and validation datasets of [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge) - World Model track have been released.
+- [2025.05.26] 🔥🔥 The training and validation datasets of [AgiBot World Challenge @ IROS 2025 - World Model track](https://huggingface.co/datasets/agibot-world/AgiBotWorldChallenge-2025/tree/main/WorldModel) have been released.
 
 - [2025.05.16] The minimal version of training code for AgibotWorld dataset and pretrained weights have been released.
 
@@ -16,7 +16,7 @@ This repo provides a minial version of training codes.
 
 ### Setup
 ```
-git clone https://github.com/AgibotTech/EnerVerse-AC.git
+git clone https://github.com/AgibotTech/AgiBotWorldChallengeIROS2025-WorldModelBaseline.git
 conda create -n enerverse python=3.10.4
 conda activate enerverse
 
@@ -32,28 +32,32 @@ pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.co
 
 #### Training on [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge)
 
-1. Download the checkpoint from [EVAC](https://huggingface.co/agibot-world/EnerVerse-AC), and modify ``model.pretrained_checkpoint`` in ``configs/agibotworld/train_config_iros_challenge_wm.yaml`` to the checkpoint file ``*.pt``
+1. Download [🤗AgiBot World Challenge @ IROS 2025 - World Model track](https://huggingface.co/datasets/agibot-world/AgiBotWorldChallenge-2025/tree/main/WorldModel) dataset.
 
-2. Download the weight of [CLIP](https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K), and modify ``model.params.img_cond_stage_config.params.abspath``
+2. Download the checkpoint from [EVAC](https://huggingface.co/agibot-world/EnerVerse-AC), and modify ``model.pretrained_checkpoint`` in ``configs/agibotworld/train_config_iros_challenge_wm.yaml`` to the checkpoint file ``*.pt``
+
+3. Download the weight of [CLIP](https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K), and modify ``model.params.img_cond_stage_config.params.abspath``
 in ``configs/agibotworld/train_config_iros_challenge_wm.yaml`` to the absolute path to ``open_clip_pytorch_model.bin`` inside the download directory
 
-3. Modify the path ``data.params.train.params.data_roots`` in ``configs/agibotworld/train_config_iros_challenge_wm.yaml`` to the root of AgiBotWorld dataset
+4. Modify the path ``data.params.train.params.data_roots`` in ``configs/agibotworld/train_config_iros_challenge_wm.yaml`` to the root of AgiBotWorld dataset
 
-4. Run the script
+5. Run the script
 ```
 bash scripts/train.sh configs/agibotworld/train_config_iros_challenge_wm.yaml
 ```
 
 #### Training on [AgiBotWolrd](https://huggingface.co/datasets/agibot-world/AgiBotWorld-Beta)
 
-1. Download the checkpoint from [EVAC](https://huggingface.co/agibot-world/EnerVerse-AC), and modify ``model.pretrained_checkpoint`` in ``configs/agibotworld/train_configs.yaml`` to the checkpoint file ``*.pt``
+1. Download [🤗AgiBotWolrd](https://huggingface.co/datasets/agibot-world/AgiBotWorld-Beta) dataset.
 
-2. Download the weight of [CLIP](https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K), and modify ``model.params.img_cond_stage_config.params.abspath``
+2. Download the checkpoint from [EVAC](https://huggingface.co/agibot-world/EnerVerse-AC), and modify ``model.pretrained_checkpoint`` in ``configs/agibotworld/train_configs.yaml`` to the checkpoint file ``*.pt``
+
+3. Download the weight of [CLIP](https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K), and modify ``model.params.img_cond_stage_config.params.abspath``
 in ``configs/agibotworld/train_configs.yaml`` to the absolute path to ``open_clip_pytorch_model.bin`` inside the download directory
 
-3. Modify the path ``data.params.train.params.data_roots`` in ``configs/agibotworld/train_configs.yaml`` to the root of AgiBotWorld dataset
+4. Modify the path ``data.params.train.params.data_roots`` in ``configs/agibotworld/train_configs.yaml`` to the root of AgiBotWorld dataset
 
-4. Run the script
+5. Run the script
 ```
 bash scripts/train.sh configs/agibotworld/train_config.yaml
 ```
