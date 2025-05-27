@@ -6,7 +6,7 @@ This repo provides a minial version of training codes.
 
 ## News
 
-- [2025.05.26] 🚀🚀 The minimal version of training code for [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge)s have been released.
+- [2025.05.26] 🚀🚀 The minimal version of training code for [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge) - World Model track have been released.
 
 - [2025.05.26] 🔥🔥 The training and validation datasets of [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge) - World Model track have been released.
 
