@@ -65,7 +65,9 @@ bash scripts/train.sh configs/agibotworld/train_config.yaml
 
 ## TODO
 - [x] Minimal version of training code for [AgibotWorld dataset](https://github.com/OpenDriveLab/AgiBot-World) and pretrained weights.
-- [x] Minimal version of training code for the challenge's dataset. (available once the challenge dataset is ready)  
+- [x] Release train & val dataset.
+- [x] Minimal version of training code for the challenge's dataset.
+- [ ] Release test dataset(without GT).  
 - [ ] Evaluation script.
 - [ ] Submission instructions.
 
