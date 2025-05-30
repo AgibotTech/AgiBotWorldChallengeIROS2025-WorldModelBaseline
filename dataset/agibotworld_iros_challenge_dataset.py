@@ -15,7 +15,6 @@ from einops import rearrange
 import glob
 from moviepy.editor import VideoFileClip
 import torchvision.transforms as transforms
-import jsonlines
 from tqdm import tqdm
 import torch.nn.functional as F
 import cv2
