@@ -24,7 +24,7 @@ from evac.lvdm.data.domain_table import DomainTable
 from evac.lvdm.data.statistics import StatisticInfo
 from evac.lvdm.data.traj_vis_statistics import ColorMapLeft, ColorMapRight, ColorListLeft, ColorListRight, EndEffectorPts, Gripper2EEFCvt
 from evac.lvdm.data.utils import intrinsic_transform, gen_crop_config, intrin_crop_transform, get_transformation_matrix_from_quat
-from utils.general_utils import zero_rank_print
+from evac.utils.general_utils import zero_rank_print
 from evac.lvdm.data.get_actions import parse_h5
 
 

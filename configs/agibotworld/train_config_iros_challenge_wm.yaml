@@ -154,7 +154,7 @@ data:
     batch_size: 8
     num_workers: 8
     train:
-      target: dataset.agibotworld_dataset.AgiBotWorldIROSChallenge
+      target: dataset.agibotworld_iros_challenge_dataset.AgiBotWorldIROSChallenge
       params:
         data_roots: ["PATH_TO_IROS25_WM_DATASET", ]
         domains: ["agibotworld", ]
