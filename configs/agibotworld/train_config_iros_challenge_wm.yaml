@@ -149,12 +149,12 @@ model:
         video_length: 16
 
 data:
-  target: dataset.utils_data.AgiBotWorldIROSChallenge
+  target: dataset.utils_data.DataModuleFromConfig
   params:
     batch_size: 8
     num_workers: 8
     train:
-      target: dataset.agibotworld_dataset.AgiBotWorld
+      target: dataset.agibotworld_dataset.AgiBotWorldIROSChallenge
       params:
         data_roots: ["PATH_TO_IROS25_WM_DATASET", ]
         domains: ["agibotworld", ]
