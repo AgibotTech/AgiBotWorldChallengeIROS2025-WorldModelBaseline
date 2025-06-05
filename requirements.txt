@@ -25,3 +25,4 @@ pytorch-lightning==1.9.5
 tensorboard
 transformers==4.47.0
 kornia
+moviepy==1.0.3
