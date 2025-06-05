@@ -115,7 +115,10 @@ class AgiBotWorldIROSChallenge(Dataset):
         2. take frames from {end-chunk*sep} to {end} as the prediction frames
         3. uniformly/randomly select memory frames from {end-self.sample_n_frames*sep} to {end-chunk*sep}
         """
-        chunk_end = random.randint(self.chunk*sep, total_frames)
+        if total_frames > self.chunk*sep:
+            chunk_end = random.randint(self.chunk*sep, total_frames)
+        else:
+            chunk_end = total_frames
         indexes = np.array(list(range(chunk_end-self.sample_n_frames*sep, chunk_end, sep)))
         indexes = np.clip(indexes, a_min=1, a_max=total_frames-1).tolist()
         video_end = indexes[-self.chunk:]
