@@ -14,7 +14,7 @@ export OMP_NUM_THREADS=4
 echo "Training on 1 Node, $NGPU GPUs"
 echo $config_file
 
-exit
+# exit
 
 
 torchrun --nnodes=1 \
