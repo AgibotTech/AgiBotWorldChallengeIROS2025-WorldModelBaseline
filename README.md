@@ -6,6 +6,8 @@ This repo provides a minial version of training codes.
 
 ## News
 
+- [2025.06.12] The instruction to evaluating your model locally have been released.
+
 - [2025.05.26] 🚀🚀 The minimal version of training code for [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge) - World Model track have been released.
 
 - [2025.05.26] 🔥🔥 The training and validation datasets of [AgiBot World Challenge @ IROS 2025 - World Model track](https://huggingface.co/datasets/agibot-world/AgiBotWorldChallenge-2025/tree/main/WorldModel) have been released.
@@ -28,7 +30,107 @@ pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.co
 
 ```
 
-### Training
+### Inference
+
+We have released the test set for the competition, which adheres to the data organization requirement of [EWMBench](https://github.com/AgibotTech/EWMBench). To facilitate participants in conducting local evaluations using [EWMBench](https://github.com/AgibotTech/EWMBench) on the validation set, we also provide [reorganized validation set](...) along with the corresponding inference and evaluation scripts
+
+1. Download the reorganized validation set or the test dataset, or reorganize you custom dataset to the the required directory structure outlined below.
+```
+PATH_TO_YOUR_DATASET/
+├── task_0/
+│   ├── episode_0/
+│   │   ├── frame.png
+│   │   ├── head_intrinsic_params.json
+│   │   ├── head_extrinsic_params_aligned.json
+│   │   └── proprio_stats.h5
+│   ├── episode_2/
+│   └── ...
+├── task_1/
+└── ...
+```
+2. If you are using [evac] as the baseline model, make sure the submodule [evac](https://huggingface.co/agibot-world/EnerVerse-AC) is the latest version
+```
+git submodule update --remote
+```
+3. Modify the path variables in scripts/infer.sh
+4. Run the script, which will predict $n_pred different generations for each input episode
+```bash scripts/infer.sh```
+5. The output directory will contain the following:
+```
+ACWM_dataset/
+├── task_0/
+│   ├── episode_0/
+│   |   ├── 0/
+|   |   |   └── video/
+|   |   |       ├── frame_00000.png
+|   |   |       ├── frame_00001.png
+|   |   |       ├── ...
+|   |   |       └── frame_*.png
+│   |   ├── 1/
+|   |   |   └── video/
+|   |   |       ├── frame_00000.png
+|   |   |       ├── frame_00001.png
+|   |   |       ├── ...
+|   |   |       └── frame_*.png
+│   |   └── 2/
+|   |       └── video/
+|   |           ├── frame_00000.png
+|   |           ├── frame_00001.png
+|   |           ├── ...
+|   |           └── frame_*.png
+│   ├── episode_1/
+│   └── ...
+├── task_1/
+└── ...
+```
+
+### Online Evaluation on test dataset
+
+TBD
+
+
+### Local Evaluation on validation dataset
+
+1. Clone [EWMBench](https://github.com/AgibotTech/EWMBench.git) and setup the environment following the instruction in [EWMBench](https://github.com/AgibotTech/EWMBench)
+2. Download the reorganized validation set or reorganize you custom dataset to the the required directory structure outlined below.
+
+```
+DIRPATH_TO_YOUR_DATASET/
+  gt_dataset/
+  ├── task_1/
+  │   ├── episode_1/
+  │   │   └── video/
+  │   │       ├── frame_00000.png
+  │   │       ├── ...
+  │   │       └── frame_0000n.png
+  │   ├── episode_2/
+  │   └── ...
+  ├── task_2/
+  └── ...
+```
+3. Modify the path in PATH_TO_EWMBench/config.yaml
+```
+model_name: ACWM
+data:
+  gt_path: DIRPATH_TO_YOUR_DATASET/gt_dataset
+  val_base: DIRPATH_SAVE_PREDICTION/ACWM_dataset
+...
+```
+
+Note that the base name of ``gt_path`` should be ``gt_dataset`` and the base name of ``val_base`` should be ``${model_name}_dataset``
+
+4. Run the scripts
+```
+# Preprocess input images and detect grippers
+bash processing.sh ./config.yaml
+
+# Calculate metrics
+python evaluate.py --dimension 'semantics' 'trajectory_consistency' 'diversity' 'scene_consistency' 'psnr' 'ssim' --config ./config.yaml
+```
+
+
+
+### Train
 
 #### Training on [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge)
 
@@ -67,8 +169,8 @@ bash scripts/train.sh configs/agibotworld/train_config.yaml
 - [x] Minimal version of training code for [AgibotWorld dataset](https://github.com/OpenDriveLab/AgiBot-World) and pretrained weights.
 - [x] Release train & val dataset.
 - [x] Minimal version of training code for the challenge's dataset.
-- [ ] Release test dataset(without GT).  
-- [ ] Evaluation script.
+- [x] Release test dataset(without GT).  
+- [x] Evaluation script.
 - [ ] Submission instructions.
 
 
