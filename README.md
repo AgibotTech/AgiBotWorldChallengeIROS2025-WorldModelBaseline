@@ -32,7 +32,7 @@ pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.co
 
 ### Inference
 
-We have released the test set for the competition, which adheres to the data organization requirement of [EWMBench](https://github.com/AgibotTech/EWMBench). To facilitate participants in conducting local evaluations using [EWMBench](https://github.com/AgibotTech/EWMBench) on the validation set, we also provide [reorganized validation set](...) along with the corresponding inference and evaluation scripts
+We have released the test set for the competition, which adheres to the data organization requirement of [EWMBench](https://github.com/AgibotTech/EWMBench). To facilitate participants in conducting local evaluations using [EWMBench](https://github.com/AgibotTech/EWMBench) on the validation set, we also provide [reorganized validation set](...) along with the corresponding inference and evaluation scripts.
 
 1. Download the reorganized validation set or the test dataset, or reorganize you custom dataset to the the required directory structure outlined below.
 ```
@@ -48,12 +48,12 @@ PATH_TO_YOUR_DATASET/
 ├── task_1/
 └── ...
 ```
-2. If you are using [evac] as the baseline model, make sure the submodule [evac](https://huggingface.co/agibot-world/EnerVerse-AC) is the latest version
+2. If you are using EVAC as the baseline model, make sure the submodule [evac](https://huggingface.co/agibot-world/EnerVerse-AC) is the latest version
 ```
 git submodule update --remote
 ```
 3. Modify the path variables in scripts/infer.sh
-4. Run the script, which will predict $n_pred different generations for each input episode
+4. Run the script, which will predict ${n_pred} different generations for each input episode
 ```bash scripts/infer.sh```
 5. The output directory will contain the following:
 ```
@@ -128,8 +128,7 @@ bash processing.sh ./config.yaml
 python evaluate.py --dimension 'semantics' 'trajectory_consistency' 'diversity' 'scene_consistency' 'psnr' 'ssim' --config ./config.yaml
 ```
 
-
-We only use three metrics for measurement: **PSNR**, **scene_consistency** and **nDTW**. The evaluatoin results of EVAC on the validation dataset are tabulated bellow. More detailed results can be found in https://huggingface.co/agibot-world/EnerVerse-AC/blob/main/EVAC_validation_set_metrics.csv .
+We only use three metrics for online evaluation: **PSNR**, **scene_consistency** and **nDTW**. The evaluatoin results of EVAC on the validation dataset are tabulated bellow. More detailed results can be found in https://huggingface.co/agibot-world/EnerVerse-AC/blob/main/EVAC_validation_set_metrics.csv .
 
 | PSNR   | Scene Consistency |  nDTW  |
 |:------:|:-----------------:|:------:|
