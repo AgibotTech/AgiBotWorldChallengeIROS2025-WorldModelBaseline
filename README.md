@@ -129,6 +129,14 @@ python evaluate.py --dimension 'semantics' 'trajectory_consistency' 'diversity' 
 ```
 
 
+We only use three metrics for measurement: **PSNR**, **scene_consistency** and **nDTW**. The evaluatoin results of EVAC on the validation dataset are tabulated bellow. More detailed results can be found in https://huggingface.co/agibot-world/EnerVerse-AC/blob/main/EVAC_validation_set_metrics.csv .
+
+| PSNR   | Scene Consistency |  nDTW  |
+|:------:|:-----------------:|:------:|
+|20.9841 |     0.9013        | 0.9065 |
+
+
+
 
 ### Train
 
