@@ -85,7 +85,7 @@ ACWM_dataset/
 
 ### Online Evaluation on test dataset
 
-TBD
+Check [agibot-world/IROSChallengeWMTrack](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack)
 
 
 ### Local Evaluation on validation dataset
