@@ -6,6 +6,8 @@ This repo provides a minial version of training codes.
 
 ## News
 
+- [2025.07.15] **The [test server](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) of AgiBot World Challenge @ IROS 2025  is available now.** Please visit the [huggingface competition space](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) for more details.
+
 - [2025.06.12] The instruction to evaluating your model locally have been released.
 
 - [2025.05.26] 🚀🚀 The minimal version of training code for [AgiBot World Challenge @ IROS 2025](https://agibot-world.com/challenge) - World Model track have been released.
@@ -31,6 +33,9 @@ pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.co
 ```
 
 ### Inference
+
+<ins>Kindly Reminder</ins>: since the [evaluation website](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) only supports uploading JPG images, please ensure that you save images in JPG format when using the inference script.
+
 We have released the [test set](https://huggingface.co/datasets/agibot-world/AgiBotWorldChallenge-2025/blob/main/WorldModel/test.tar.gz) for the competition, which adheres to the data organization requirement of [EWMBench](https://github.com/AgibotTech/EWMBench). To facilitate participants in conducting local evaluations using [EWMBench](https://github.com/AgibotTech/EWMBench) on the validation set, we also provide [reorganized validation set](https://huggingface.co/datasets/agibot-world/AgiBotWorldChallenge-2025/blob/main/WorldModel/val_reorganized.tar.gz) along with the corresponding inference and evaluation scripts.
 
 1. Download the reorganized validation set or the test dataset, or reorganize you custom dataset to the the required directory structure outlined below.
@@ -61,22 +66,22 @@ ACWM_dataset/
 │   ├── episode_0/
 │   |   ├── 0/
 |   |   |   └── video/
-|   |   |       ├── frame_00000.png
-|   |   |       ├── frame_00001.png
+|   |   |       ├── frame_00000.jpg
+|   |   |       ├── frame_00001.jpg
 |   |   |       ├── ...
-|   |   |       └── frame_*.png
+|   |   |       └── frame_*.jpg
 │   |   ├── 1/
 |   |   |   └── video/
-|   |   |       ├── frame_00000.png
-|   |   |       ├── frame_00001.png
+|   |   |       ├── frame_00000.jpg
+|   |   |       ├── frame_00001.jpg
 |   |   |       ├── ...
-|   |   |       └── frame_*.png
+|   |   |       └── frame_*.jpg
 │   |   └── 2/
 |   |       └── video/
-|   |           ├── frame_00000.png
-|   |           ├── frame_00001.png
+|   |           ├── frame_00000.jpg
+|   |           ├── frame_00001.jpg
 |   |           ├── ...
-|   |           └── frame_*.png
+|   |           └── frame_*.jpg
 │   ├── episode_1/
 │   └── ...
 ├── task_1/
@@ -85,7 +90,7 @@ ACWM_dataset/
 
 ### Online Evaluation on test dataset
 
-Check [agibot-world/IROSChallengeWMTrack](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack)
+Check [agibot-world/IROSChallengeWMTrack](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) for more information.
 
 
 ### Local Evaluation on validation dataset
@@ -177,7 +182,7 @@ bash scripts/train.sh configs/agibotworld/train_config.yaml
 - [x] Minimal version of training code for the challenge's dataset.
 - [x] Release test dataset(without GT).  
 - [x] Evaluation script.
-- [ ] Submission instructions.
+- [x] Submission instructions.
 
 
 
