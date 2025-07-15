@@ -6,7 +6,7 @@ This repo provides a minial version of training codes.
 
 ## News
 
-- [2025.07.15] 🚀🚀 **The [test server](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) of AgiBot World Challenge @ IROS 2025  is available now.** Please visit the [huggingface competition space](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) for more details.
+- [2025.07.15] 🚀🚀 **The [test server](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) of AgiBot World Challenge @ IROS 2025  is available now.** Please visit the [huggingface competition space](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) for more details. (A minor update has been made to the inference script.)
 
 - [2025.06.12] The instruction to evaluating your model locally have been released.
 
@@ -34,7 +34,7 @@ pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.co
 
 ### Inference
 
-<ins>Kindly Reminder</ins>: since the [evaluation website](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) only supports uploading JPG images, please ensure that you save images in JPG format when using the inference script.
+<ins>Kindly Reminder</ins>: To compress the size of submission files, we have converted all images used in inference to jpg format.
 
 We have released the [test set](https://huggingface.co/datasets/agibot-world/AgiBotWorldChallenge-2025/blob/main/WorldModel/test.tar.gz) for the competition, which adheres to the data organization requirement of [EWMBench](https://github.com/AgibotTech/EWMBench). To facilitate participants in conducting local evaluations using [EWMBench](https://github.com/AgibotTech/EWMBench) on the validation set, we also provide [reorganized validation set](https://huggingface.co/datasets/agibot-world/AgiBotWorldChallenge-2025/blob/main/WorldModel/val_reorganized.tar.gz) along with the corresponding inference and evaluation scripts.
 
