@@ -6,7 +6,7 @@ This repo provides a minial version of training codes.
 
 ## News
 
-- [2025.07.15] **The [test server](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) of AgiBot World Challenge @ IROS 2025  is available now.** Please visit the [huggingface competition space](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) for more details.
+- [2025.07.15] 🚀🚀 **The [test server](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) of AgiBot World Challenge @ IROS 2025  is available now.** Please visit the [huggingface competition space](https://huggingface.co/spaces/agibot-world/IROSChallengeWMTrack) for more details.
 
 - [2025.06.12] The instruction to evaluating your model locally have been released.
 
